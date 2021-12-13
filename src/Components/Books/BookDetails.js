@@ -28,7 +28,7 @@ const BookDetails = () => {
   };
 
   const _returnBook = async () => {
-    await returnBook({ book: { id: book.id }, });
+    await returnBook({ book: { id: book.id } });
   };
 
   return (
@@ -107,10 +107,16 @@ const BookDetails = () => {
                           </Button>{" "}
                         </Col>
                         <Col>
-                          <Button variant="warning" onClick={async () => {
-                            await _returnBook();
-                            _getBookById(id);
-                          }}>Return</Button>
+                          <Button
+                            disabled={book?.bookStatus === "AVAILABLE"}
+                            variant="warning"
+                            onClick={async () => {
+                              await _returnBook();
+                              _getBookById(id);
+                            }}
+                          >
+                            Return
+                          </Button>
                         </Col>
                       </Row>
                     </div>

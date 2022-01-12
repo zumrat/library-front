@@ -27,7 +27,9 @@ const Footer = () => {
           <Modal2 open={isOpen} onClose={() => setIsOpen(false)}></Modal2>
         </Nav>
         <Nav>
-        <p class="text-white bg-dark">© 2021 Copyright. The Reading Cafe</p>
+          <p className="text-white bg-dark">
+            © 2021 Copyright. The Reading Cafe
+          </p>
         </Nav>
       </Container>
     </Navbar>

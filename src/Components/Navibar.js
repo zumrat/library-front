@@ -44,8 +44,9 @@ export default function NaviBar() {
           <Nav className="me-auto">
             <NavDropdown title="Genres" id="collasible-nav-dropdown">
               {location.pathname !== "/about" &&
-                genres?.map((genre) => (
+                genres?.map((genre, index) => (
                   <NavDropdown.Item
+                    key={index}
                     onClick={(e) => {
                       _searchBooksQ(genre);
                     }}
@@ -57,6 +58,7 @@ export default function NaviBar() {
             <Nav.Link href="/popular">Popular</Nav.Link>
             <Nav.Link href="/new">New</Nav.Link>
             <Nav.Link href="/books">All Books</Nav.Link>
+            <Nav.Link href="/readers-list">Readers list</Nav.Link>
             <Nav.Link href="/about">About</Nav.Link>
           </Nav>
           <Nav>
